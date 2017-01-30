@@ -1,0 +1,35 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          monitoramento
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start monitoramento
+# Description:       Habilita monitoramento JMX.
+### END INIT INFO
+
+case $1 in
+    start)
+        /bin/bash /usr/local/bin/monitoramento-start.sh
+	PID=$(cat pid.txt)
+	echo 'Service running PID:'$PID >&2
+    ;;
+    stop)
+        /bin/bash /usr/local/bin/monitoramento-stop.sh
+	echo 'Service stopped ...'
+    ;;
+    restart)
+        /bin/bash /usr/local/bin/monitoramento-stop.sh
+        /bin/bash /usr/local/bin/monitoramento-start.sh
+    ;;
+    status)
+ 	PID=$(cat pid.txt)
+	if [ -z $PID ]; then
+		echo 'Service not running' >&2
+	else
+		echo 'Service running' >&2
+	fi	
+    ;;
+esac
+exit 0
