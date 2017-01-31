@@ -1,15 +1,15 @@
 
-# Exemplo de subir uma aplicação java no linux
+# Exemplo de subir uma aplicação automaticamente com o S.O. Linux
 
 - /etc/init.d/sample start
 - /etc/init.d/sample stop
 - /etc/init.d/sample restart
 
-Inicializando app junto com o S.O.
+Inicializando app junto com o S.O. Linux
 
 - update-rc.d sample defaults
 
-Removendo app da inicialização do S.O.
+Removendo app da inicialização do S.O. Linux
 
 - update-rc.d -f meuScript remove
 
