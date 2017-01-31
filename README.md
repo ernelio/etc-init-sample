@@ -1,5 +1,5 @@
 
-# Exemplo de subir uma aplicação automaticamente com o S.O. Linux
+# Startando aplicação automaticamente com o S.O. Linux
 
 - /etc/init.d/sample start
 - /etc/init.d/sample stop
